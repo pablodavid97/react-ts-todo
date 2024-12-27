@@ -9,11 +9,13 @@ type TodosDefaultContext = {
 
 export const TodosContext = createContext<TodosDefaultContext>({
     items: [],
-    addTodo: (text: string) => {},
-    removeTodo: (id: string) => {},
+    addTodo: () => {},
+    removeTodo: () => {},
 });
 
-const TodosContextProvider: React.FC = ({ children }) => {
+const TodosContextProvider: React.FC<React.PropsWithChildren<{}>> = ({
+    children,
+}) => {
     const [todos, setTodos] = useState<Todo[]>([]);
 
     const handleAddTodo = (todoText: string) => {
