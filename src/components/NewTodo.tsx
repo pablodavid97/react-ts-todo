@@ -21,7 +21,7 @@ const NewTodo = () => {
     return (
         <form className='form' onSubmit={handleSubmit}>
             <label htmlFor='text'>Todo text</label>
-            <input id='text' type='text' ref={inputRef} />
+            <input id='text' type='text' data-testid='text-input' ref={inputRef} />
             <button>Add Todo</button>
         </form>
     );
